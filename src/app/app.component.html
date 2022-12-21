@@ -1,0 +1,16 @@
+<h1>{{title}}</h1>
+<p>Verson: {{version}}</p>
+<div> This is a test method component ! </div>
+<form [formGroup]="profileForm" (ngSubmit)="submit()">
+
+  <label for="first-name">First Name: </label>
+  <input id="first-name" type="text" formControlName="firstName">
+
+  <label for="last-name">Last Name: </label>
+  <input id="last-name" type="text" formControlName="lastName">
+  <!--<button type="button" (click)="updateProfile()">Update Profile</button>-->
+  <button type="submit" [disabled]="!profileForm.valid">Submit</button>
+</form>
+<label for="name">{{name}}:</label>
+<input [(ngModel)]="name" id="name" value="name">
+<router-outlet></router-outlet>
